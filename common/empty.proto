@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package common.empty;
+option go_package = "github.com/RapturaX/Raptura-Proto/common/empty";
+
+message Empty {}

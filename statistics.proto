@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package statistics;
+option go_package = "github.com/RapturaX/Raptura-Proto/statistics";
+
+import "common/empty.proto";
+import "common/statistics.proto";
+
+service NodeStatisticsService {
+  rpc GetNodeStatistics (common.empty.Empty) returns (common.statistics.NodeStatistics);
+}

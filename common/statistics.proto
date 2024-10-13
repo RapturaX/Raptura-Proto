@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package common.statistics;
+option go_package = "github.com/RapturaX/Raptura-Proto/common/statistics";
+
+message NodeSystemStatistics {
+  int32 cpus = 1;
+  float cpu_usage = 2;
+
+  int64 memory_total = 3;
+  int64 memory_used = 4;
+
+  int64 disk_total = 5;
+  int64 disk_used = 6;
+}
+
+message NodeContainerStatistics {
+  int32 containers_running = 1;
+  int32 containers_paused = 2;
+  int32 containers_stopped = 3;
+
+  int32 images_total = 4;
+  int64 images_total_size = 5;
+
+  int32 networks_total = 6;
+  int32 volumes_total = 7;
+}
+
+message NodeStatistics {
+  NodeSystemStatistics system = 1;
+  NodeContainerStatistics containers = 2;
+}
